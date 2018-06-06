@@ -1,5 +1,5 @@
 {
-  "name": "anypoint-item",
+  "name": "@anypoint-components/anypoint-item",
   "description": "An Anypoint list item",
   "main": "anypoint-item.js",
   "authors": [
