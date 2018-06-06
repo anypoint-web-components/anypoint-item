@@ -1,0 +1,36 @@
+{
+  "name": "anypoint-item",
+  "description": "An Anypoint list item",
+  "main": "anypoint-item.js",
+  "authors": [
+    "Pawel Psztyc"
+  ],
+  "private": true,
+  "dependencies": {
+    "@anypoint-components/anypoint-styles": "github:anypoint-components/anypoint-styles#3.0.0-preview",
+    "@polymer/polymer": "^3.0.0",
+    "@polymer/iron-flex-layout": "^3.0.0-pre.1",
+    "@polymer/iron-behaviors": "^3.0.0-pre.1"
+  },
+  "devDependencies": {
+    "@anypoint-components/anypoint-icons": "github:anypoint-components/anypoint-icons#3.0.0-preview",
+    "@polymer/gen-typescript-declarations": "^1.1.1",
+    "@polymer/iron-component-page": "^3.0.0-pre.18",
+    "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
+    "@polymer/iron-icon": "^3.0.0-pre.19",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "wct-browser-legacy": "^1.0.0"
+  },
+  "scripts": {
+    "test": "polymer test --plugin local",
+    "update-types": "gen-typescript-declarations --deleteExisting --outDir ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/anypoint-components/anypoint-item.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anypoint-components/anypoint-item/issues",
+    "email": "arc@mulesoft.com"
+  }
+}

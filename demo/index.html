@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>anypoint-item demo</title>
+
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <script type="module">
+      import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
+      import '@polymer/iron-demo-helpers/demo-snippet';
+      import '@polymer/iron-icon/iron-icon';
+      import '@anypoint-components/anypoint-icons/anypoint-icons';
+    </script>
+
+    <script type="module" src="../anypoint-item.js"></script>
+    <script type="module" src="../anypoint-icon-item.js"></script>
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Anypoint-items are list elements, to be used in an anypoint-listbox or an element with <i>role="listbox"</i></h3>
+      <demo-snippet>
+        <template>
+          <div role="listbox">
+            <anypoint-item>Option 1</anypoint-item>
+            <anypoint-item>Option 2</anypoint-item>
+            <anypoint-item>Option 3</anypoint-item>
+            <anypoint-item>
+              <p>Paragraph as a child</p>
+            </anypoint-item>
+          </div>
+        </template>
+      </demo-snippet>
+
+      <h3>Styled items</h3>
+      <demo-snippet>
+        <template>
+          <div role="listbox">
+            <anypoint-item class="my-theme">Option 1</anypoint-item>
+            <anypoint-item class="my-theme">Option 2</anypoint-item>
+            <anypoint-item class="my-theme">Option 3</anypoint-item>
+          </div>
+          <custom-style>
+            <style is="custom-style">
+              anypoint-item.my-theme {
+                --anypoint-item-focused: {
+                  background: yellow;
+                  color: #000;
+                  font-weight: bold;
+                };
+              }
+            </style>
+          </custom-style>
+        </template>
+      </demo-snippet>
+
+      <h3>Add an icon (or any other element) as a leading element by adding <i>slot="item-icon"</i> attribute</h3>
+      <demo-snippet>
+        <template>
+          <div role="listbox">
+            <anypoint-icon-item>
+              <iron-icon icon="anypoint:add" slot="item-icon"></iron-icon>
+              Add
+            </anypoint-icon-item>
+            <anypoint-icon-item>
+              <iron-icon icon="anypoint:refresh" slot="item-icon"></iron-icon>
+              Refresh
+            </anypoint-icon-item>
+            <anypoint-icon-item>
+              <span slot="item-icon" class="circle"></span>
+              Refresh
+            </anypoint-icon-item>
+            <style>
+            .circle {
+              width: 25px;
+              height: 25px;
+              background-color: red;
+              border-radius: 50%;
+            }
+            </style>
+          </div>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>
