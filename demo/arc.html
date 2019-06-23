@@ -4,21 +4,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>anypoint-item demo</title>
+    <title>anypoint-item - ARC styles demo</title>
 
     <script type="module" src="../node_modules/@advanced-rest-client/arc-demo-helper/arc-demo-helper.js"></script>
     <script type="module" src="../node_modules/@polymer/iron-icon/iron-icon.js"></script>
+    <script type="module" src="../node_modules/@polymer/iron-icons/iron-icons.js"></script>
+    <script type="module" src="../node_modules/@polymer/iron-icons/communication-icons.js"></script>
+    <script type="module" src="../node_modules/@polymer/paper-styles/paper-styles.js"></script>
     <script type="module" src="../node_modules/@anypoint-web-components/anypoint-icons/anypoint-icons.js"></script>
-    <script type="module" src="../node_modules/@anypoint-web-components/anypoint-styles/default-theme.js"></script>
     <script type="module" src="../anypoint-item.js"></script>
     <script type="module" src="../anypoint-icon-item.js"></script>
     <script type="module" src="../anypoint-item-body.js"></script>
 
     <style>
-    body {
-      font-family: var(--font-family) !important;
-
-      --secondary-text-color: #616161;
+    html {
+      /* --secondary-text-color: #616161; */
+      --anypoint-item-min-height: 48px;
+      --anypoint-item-padding: 0px 16px;
+      --anypoint-item-border-left-width: 0;
+      --anypoint-item-border-right-width: 0;
+      --anypoint-item-border-left-color: initial;
+      --anypoint-item-border-right-color: initial;
+      --anypoint-item-focus-color: currentColor;
+      --anypoint-item-focused-color: currentColor;
+      --anypoint-item-before-background: currentColor;
+      --anypoint-item-before-opacity: var(--dark-divider-opacity);
+      --anypoint-item-secondary-focus-color: var(--secondary-text-color);
     }
 
     div[role="listbox"] {
@@ -28,8 +39,8 @@
     .avatar {
       display: inline-block;
       box-sizing: border-box;
-      width: 36px;
-      height: 36px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       background: orange;
     }
@@ -78,13 +89,15 @@
         <template>
           <div role="listbox">
             <anypoint-icon-item>
-              <iron-icon icon="anypoint:add" slot="item-icon"></iron-icon> Add
+              <iron-icon icon="inbox" slot="item-icon"></iron-icon> Inbox
             </anypoint-icon-item>
             <anypoint-icon-item>
-              <iron-icon icon="anypoint:refresh" slot="item-icon"></iron-icon> Refresh
+              <iron-icon icon="star" slot="item-icon"></iron-icon>
+              Starred
             </anypoint-icon-item>
             <anypoint-icon-item>
-              <span slot="item-icon" class="circle"></span> Refresh
+              <div class="avatar blue" slot="item-icon"></div>
+              Alphonso Engelking
             </anypoint-icon-item>
             <style>
             .circle {
@@ -110,8 +123,7 @@
           </anypoint-item>
 
           <anypoint-icon-item>
-            <iron-icon icon="anypoint:add" slot="item-icon">
-            </iron-icon>
+            <iron-icon icon="communication:phone" slot="item-icon"></iron-icon>
             <anypoint-item-body two-line>
               <div>(650) 555-1234</div>
               <div secondary>Mobile</div>

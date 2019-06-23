@@ -1,69 +1,78 @@
-import '@polymer/iron-flex-layout/iron-flex-layout.js';
-import '@anypoint-components/anypoint-styles/colors.js';
-import '@anypoint-components/anypoint-styles/default-theme.js';
-import '@anypoint-components/anypoint-styles/typography.js';
-const $documentContainer = document.createElement('div');
-$documentContainer.setAttribute('style', 'display: none;');
+import '@anypoint-web-components/anypoint-styles/colors.js';
 
-$documentContainer.innerHTML = `<dom-module id="anypoint-item-shared-styles">
-  <template>
-    <style>
-      :host, .anypoint-item {
-        display: block;
-        position: relative;
-        min-height: var(--anypoint-item-min-height, 40px);
-        padding: 0px 10px;
-        cursor: pointer;
-        border-left: 2px solid var(--anypoint-color-aluminum4);
-        border-right: 2px solid var(--anypoint-color-aluminum4);
-      }
+import { css } from 'lit-element';
+export default css`
+  :host,
+  .anypoint-item {
+    display: block;
+    position: relative;
+    min-height: var(--anypoint-item-min-height, 40px);
+    padding: var(--anypoint-item-padding, 0px 10px);
+    cursor: pointer;
 
-      :host(:hover), .anypoint-item:hover {
-        color: var(--anypoint-item-focus-color, var(--anypoint-color-coreBlue3));
-        border-left: 2px var(--anypoint-color-coreBlue3) solid;
-        border-right: 2px var(--anypoint-color-coreBlue3) solid;
-      }
+    border-left-width: var(--anypoint-item-border-left-width, 2px);
+    border-right-width: var(--anypoint-item-border-right-width, 2px);
+    border-left-color: var(--anypoint-item-border-left-color, var(--anypoint-color-aluminum4));
+    border-right-color: var(--anypoint-item-border-right-color, var(--anypoint-color-aluminum4));
+    border-left-style: solid;
+    border-right-style: solid;
+  }
 
-      .anypoint-item {
-        @apply --anypoint-font-common-base;
-        border:none;
-        outline: none;
-        background: white;
-        width: 100%;
-        text-align: left;
-      }
+  :host(:hover),
+  .anypoint-item:hover {
+    color: var(--anypoint-item-focus-color, var(--anypoint-color-coreBlue3));
 
-      :host([hidden]), .anypoint-item[hidden] {
-        display: none !important;
-      }
+    border-left-color: var(
+      --anypoint-item-border-left-hover-color,
+      var(--anypoint-color-coreBlue3)
+    );
+    border-right-color: var(
+      --anypoint-item-border-right-hover-color,
+      var(--anypoint-color-coreBlue3)
+    );
+  }
 
-      :host(.iron-selected), .anypoint-item.iron-selected {
-        font-weight: var(--anypoint-item-selected-weight, bold);
-        @apply --anypoint-item-selected;
-      }
+  .anypoint-item {
+    outline: none;
+    width: 100%;
+    text-align: left;
+  }
 
-      :host([disabled]), .anypoint-item[disabled] {
-        color: var(--anypoint-item-disabled-color, var(--disabled-text-color));
-        @apply --anypoint-item-disabled;
-      }
+  :host([hidden]),
+  .anypoint-item[hidden] {
+    display: none !important;
+  }
 
-      :host(:focus), .anypoint-item:focus {
-        position: relative;
-        outline: 0;
-        color: var(--anypoint-item-focus-color, var(--anypoint-color-coreBlue3));
-        @apply --anypoint-item-focused;
-      }
+  :host(.iron-selected) :host(.selected),
+  .anypoint-item.iron-selected,
+  .anypoint-item.selected {
+    font-weight: var(--anypoint-item-selected-weight, bold);
+  }
 
-      :host(:focus):before, .anypoint-item:focus:before {
-        @apply --layout-fit;
-        /* background: currentColor; */
-        content: '';
-        /* opacity: var(--dark-divider-opacity); */
-        pointer-events: none;
-        @apply --anypoint-item-focused-before;
-      }
-    </style>
-  </template>
-</dom-module>`;
+  :host([disabled]),
+  .anypoint-item[disabled] {
+    color: var(--anypoint-item-disabled-color, var(--disabled-text-color));
+  }
 
-document.head.appendChild($documentContainer);
+  :host(:focus),
+  .anypoint-item:focus {
+    position: relative;
+    outline: 0;
+    color: var(--anypoint-item-focused-color, var(--anypoint-color-coreBlue3));
+    background-color: var(--anypoint-item-focused-background-color, initial);
+    font-weight: var(--anypoint-item-focused-font-weight, initial);
+  }
+
+  :host(:focus):before,
+  .anypoint-item:focus:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--anypoint-item-before-background); /* currentColor */
+    content: '';
+    opacity: var(--anypoint-item-before-opacity); /* var(--dark-divider-opacity) */
+    pointer-events: none;
+  }
+`;
