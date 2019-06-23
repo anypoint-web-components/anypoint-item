@@ -5,7 +5,7 @@
  *   https://github.com/Polymer/tools/tree/master/packages/gen-typescript-declarations
  *
  * To modify these typings, edit the source file(s):
- *   anypoint-item.js
+ *   anypoint-item-body.js
  */
 
 
@@ -14,23 +14,21 @@
 
 import {LitElement, html, css} from 'lit-element';
 
-import {ButtonStateMixin, ControlStateMixin, HoverableMixin} from '@anypoint-web-components/anypoint-control-mixins/anypoint-control-mixins.js';
-
 declare namespace AnypointUi {
 
   /**
    * `anypoint-item`
-   * An Anypoint list item.
+   * An Anypoint list item with 2 or 3 lines.
    */
-  class AnypointItem {
+  class AnypointItemBody extends LitElement {
+    constructor();
     render(): any;
-    connectedCallback(): void;
   }
 }
 
 declare global {
 
   interface HTMLElementTagNameMap {
-    "anypoint-item": AnypointUi.AnypointItem;
+    "anypoint-item-body": AnypointUi.AnypointItemBody;
   }
 }

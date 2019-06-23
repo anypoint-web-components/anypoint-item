@@ -1,74 +1,75 @@
-# <anypoint-item>
+[![Build Status](https://travis-ci.org/anypoint-web-components/anypoint-item.svg?branch=master)](https://travis-ci.org/anypoint-web-components/anypoint-item)
 
-An Anypoint list item
+[![Published on NPM](https://img.shields.io/npm/v/@anypoint-web-components/anypoint-item.svg)](https://www.npmjs.com/package/@anypoint-web-components/anypoint-item)
 
-## Usage
+# anypoint-item
 
-Install element:
-
-```
-npm i --save @anypoint-components/anypoint-item
-```
-
-Import into your app:
+`<anypoint-item>` is an interactive list item. By default, it is a horizontal flexbox.
 
 ```html
-<script type="module" src="node_modules/@anypoint-components/anypoint-item.js"></script>
-<script type="module" src="node_modules/@anypoint-components/anypoint-icon-item.js"></script>
+<anypoint-item>Item</anypoint-item>
 ```
 
-Or into another component
+Use this element with `<anypoint-item-body>` to make styled two-line and three-line items.
+
+```html
+<anypoint-item>
+  <anypoint-item-body two-line>
+    <div>Show your status</div>
+    <div secondary>Your status is visible to everyone</div>
+  </anypoint-item-body>
+  <iron-icon icon="warning"></iron-icon>
+</anypoint-item>
+```
+
+To use `anypoint-item` as a link, wrap it in an anchor tag. Since `anypoint-item` will already receive focus, you may want to prevent the anchor tag from receiving focus as well by setting its tabindex to -1.
+
+```html
+<a href="https://www.polymer-project.org/" tabindex="-1">
+  <anypoint-item raised>Polymer Project</anypoint-item>
+</a>
+```
+
+If you are concerned about performance and want to use `anypoint-item` in a `anypoint-listbox` with many items, you can just use a native `button` with the `anypoint-item` class applied (provided you have correctly included the shared styles):
 
 ```javascript
-import '@anypoint-components/anypoint-item.js';
-import '@anypoint-components/anypoint-icon-item.js';
+import { LitElement, html, css } from 'lit-element';
+import itemStyles from '@anypoint-web-components/anypoint-item/anypoint-item-shared-styles.js';
+
+class SampleElement extends LitElement {
+  static get styles() {
+    return [
+      itemStyles,
+      css`...`;
+    ];
+  }
+
+  render() {
+    return html`
+    <anypoint-listbox>
+      <button class="anypoint-item" role="option">Inbox</button>
+      <button class="anypoint-item" role="option">Starred</button>
+      <button class="anypoint-item" role="option">Sent mail</button>
+    </anypoint-listbox>
+    `;
+  }
+}
+customElements.define('sample-element', SampleElement);
 ```
 
-Use it:
+### Styling
+
+See [anypoint-item-shared-styles.js](anypoint-item-shared-styles.js) for list of CSS variables.
+
+### Accessibility
+
+This element has `role="listitem"` by default. Depending on usage, it may be more appropriate to set `role="menuitem"`, `role="menuitemcheckbox"` or `role="menuitemradio"`.
 
 ```html
-<div role="listbox">
-  <anypoint-item>Option</anypoint-item>
-  <anypoint-item>
-    <p>Paragraph as a child</p>
-  </anypoint-item>
-</div>
-<div role="listbox">
-  <anypoint-icon-item>
-    <iron-icon icon="anypoint:refresh" slot="item-icon"></iron-icon>
-    Refresh
-  </anypoint-icon-item>
-  <anypoint-icon-item>
-    <span slot="item-icon" class="circle"></span>
-    Refresh
-  </anypoint-icon-item>
-</div>
-<style>
-.circle {
-  width: 25px;
-  height: 25px;
-  background-color: red;
-  border-radius: 50%;
-}
-</style>
+<anypoint-item role="menuitemcheckbox">
+  <anypoint-item-body>
+    Show your status
+  </anypoint-item-body>
+  <paper-checkbox></paper-checkbox>
+</anypoint-item>
 ```
-
-## Development
-
-### Install the Polymer-CLI
-
-First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) and npm (packaged with [Node.js](https://nodejs.org)) installed. Run `npm install` to install your element's dependencies, then run `polymer serve` to serve your element locally.
-
-### Viewing Your Element
-
-```
-$ polymer serve
-```
-
-### Running Tests
-
-```
-$ polymer test
-```
-
-Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
