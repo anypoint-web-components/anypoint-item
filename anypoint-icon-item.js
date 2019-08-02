@@ -54,7 +54,9 @@ class AnypointIconItem extends HoverableMixin(ControlStateMixin(ButtonStateMixin
     if (!this.hasAttribute('tabindex')) {
       this.setAttribute('tabindex', '0');
     }
-    super.connectedCallback();
+    if (super.connectedCallback) {
+      super.connectedCallback();
+    }
   }
 }
 

@@ -161,34 +161,32 @@ describe('<anypoint-item>', () => {
       assert.equal(element.getAttribute('tabindex'), '-1', 'has tabindex="-1"');
     });
 
-    describe('a11y', () => {
-      it('passes a11y for regular item', async () => {
-        const element = await fixture(`<div role="listbox" aria-label="test label">
-        <anypoint-item>item</anypoint-item>
-        </div>`);
-        await assert.isAccessible(element);
-      });
+    it('passes a11y for regular item', async () => {
+      const element = await fixture(`<div role="listbox" aria-label="test label">
+      <anypoint-item>item</anypoint-item>
+      </div>`);
+      await assert.isAccessible(element);
+    });
 
-      it('passes a11y for button item', async () => {
-        const element = await fixture(`<div role="listbox" aria-label="test label">
-          <button class="anypoint-item" role="option">item</button>
-        </div>`);
-        await assert.isAccessible(element);
-      });
+    it('passes a11y for button item', async () => {
+      const element = await fixture(`<div role="listbox" aria-label="test label">
+        <button class="anypoint-item" role="option">item</button>
+      </div>`);
+      await assert.isAccessible(element);
+    });
 
-      it('passes a11y for icon item', async () => {
-        const element = await fixture(`<div role="listbox" aria-label="test label">
-          <anypoint-icon-item>item</anypoint-icon-item>
-        </div>`);
-        await assert.isAccessible(element);
-      });
+    it('passes a11y for icon item', async () => {
+      const element = await fixture(`<div role="listbox" aria-label="test label">
+        <anypoint-icon-item>item</anypoint-icon-item>
+      </div>`);
+      await assert.isAccessible(element);
+    });
 
-      it('passes a11y for disabled item', async () => {
-        const element = await fixture(`<div role="listbox" aria-label="test label">
-          <anypoint-icon-item disabled>item</anypoint-icon-item>
-        </div>`);
-        await assert.isAccessible(element);
-      });
+    it('passes a11y for disabled item', async () => {
+      const element = await fixture(`<div role="listbox" aria-label="test label">
+        <anypoint-icon-item disabled>item</anypoint-icon-item>
+      </div>`);
+      await assert.isAccessible(element);
     });
   });
 });
