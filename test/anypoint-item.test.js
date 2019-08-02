@@ -1,5 +1,4 @@
 import { aTimeout, fixture, expect, assert } from '@open-wc/testing';
-import { a11ySuite } from '@advanced-rest-client/a11y-suite/index.js';
 import * as MockInteractions from '@polymer/iron-test-helpers/mock-interactions.js';
 import sinon from 'sinon/pkg/sinon-esm.js';
 import '../anypoint-item.js';
@@ -162,30 +161,34 @@ describe('<anypoint-item>', () => {
       assert.equal(element.getAttribute('tabindex'), '-1', 'has tabindex="-1"');
     });
 
-    a11ySuite(
-      'anypoint-item',
-      `<div role="listbox">
-    <anypoint-item>item</anypoint-item>
-    </div>`,
-    );
+    describe('a11y', () => {
+      it('passes a11y for regular item', async () => {
+        const element = await fixture(`<div role="listbox" aria-label="test label">
+        <anypoint-item>item</anypoint-item>
+        </div>`);
+        await assert.isAccessible(element);
+      });
 
-    a11ySuite(
-      'button',
-      `<div role="listbox">
-    <button class="anypoint-item" role="option">item</button>
-    </div>`,
-    );
-    a11ySuite(
-      'iconItem',
-      `<div role="listbox">
-    <anypoint-icon-item>item</anypoint-icon-item>
-    </div>`,
-    );
-    a11ySuite(
-      'Disabled item',
-      `<div role="listbox">
-    <anypoint-icon-item disabled>item</anypoint-icon-item>
-    </div>`,
-    );
+      it('passes a11y for button item', async () => {
+        const element = await fixture(`<div role="listbox" aria-label="test label">
+          <button class="anypoint-item" role="option">item</button>
+        </div>`);
+        await assert.isAccessible(element);
+      });
+
+      it('passes a11y for icon item', async () => {
+        const element = await fixture(`<div role="listbox" aria-label="test label">
+          <anypoint-icon-item>item</anypoint-icon-item>
+        </div>`);
+        await assert.isAccessible(element);
+      });
+
+      it('passes a11y for disabled item', async () => {
+        const element = await fixture(`<div role="listbox" aria-label="test label">
+          <anypoint-icon-item disabled>item</anypoint-icon-item>
+        </div>`);
+        await assert.isAccessible(element);
+      });
+    });
   });
 });
