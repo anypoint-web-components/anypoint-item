@@ -16,6 +16,9 @@ export default css`
     border-right-color: var(--anypoint-item-border-right-color, var(--anypoint-color-aluminum4));
     border-left-style: solid;
     border-right-style: solid;
+
+    -webkit-transition: background-color 0.16s ease-in-out 0s;
+    transition: background-color 0.16s ease-in-out 0s;
   }
 
   :host(:hover),
@@ -30,6 +33,8 @@ export default css`
       --anypoint-item-border-right-hover-color,
       var(--anypoint-color-coreBlue3)
     );
+
+    background-color: var(--anypoint-item-hover-background-color, initial);
   }
 
   .anypoint-item {
@@ -43,7 +48,8 @@ export default css`
     display: none !important;
   }
 
-  :host(.iron-selected) :host(.selected),
+  :host(.iron-selected),
+  :host(.selected),
   .anypoint-item.iron-selected,
   .anypoint-item.selected {
     font-weight: var(--anypoint-item-selected-weight, bold);
@@ -74,5 +80,13 @@ export default css`
     content: '';
     opacity: var(--anypoint-item-before-opacity); /* var(--dark-divider-opacity) */
     pointer-events: none;
+  }
+
+  :host([pressed]),
+  .anypoint-item[pressed],
+  .anypoint-item.pressed {
+    position: relative;
+    outline: 0;
+    background-color: var(--anypoint-item-pressed-background-color, initial);
   }
 `;

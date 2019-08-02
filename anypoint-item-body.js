@@ -39,6 +39,7 @@ class AnypointItemBody extends LitElement {
         font-weight: var(--font-body-font-weight);
 
         color: var(--paper-item-body-secondary-color, var(--secondary-text-color));
+        margin-top: 4px;
       }
 
       :host(:hover) > ::slotted([secondary]),
