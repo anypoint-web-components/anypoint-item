@@ -27,6 +27,15 @@ class AnypointItem extends HoverableMixin(ControlStateMixin(ButtonStateMixin(Lit
     ];
   }
 
+  static get properties() {
+    return {
+      /**
+       * Enables Anypoint legacy theme.
+       */
+      legacy: { type: Boolean, reflect: true }
+    };
+  }
+
   render() {
     return html`
       <slot></slot>
