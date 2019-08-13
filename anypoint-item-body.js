@@ -19,11 +19,11 @@ class AnypointItemBody extends LitElement {
         flex-basis: 0.000000001px;
       }
 
-      :host([two-line]) {
+      :host([twoline]) {
         min-height: var(--anypoint-item-body-two-line-min-height, 72px);
       }
 
-      :host([three-line]) {
+      :host([threeline]) {
         min-height: var(--anypoint-item-body-three-line-min-height, 88px);
       }
 
@@ -42,11 +42,13 @@ class AnypointItemBody extends LitElement {
         margin-top: 4px;
       }
 
-      :host(:hover) > ::slotted([secondary]),
-      .anypoint-item:hover > [secondary] {
+      :host([legacy]:hover) > ::slotted([secondary]),
+      .anypoint-item[legacy]:hover > [secondary] {
         color: var(
           --anypoint-item-secondary-focus-color,
-          var(--anypoint-item-focus-color, var(--anypoint-color-coreBlue3))
+          var(--anypoint-item-focus-color,
+            var(--anypoint-color-coreBlue3)
+          )
         );
 
         border-left-color: var(
@@ -59,6 +61,15 @@ class AnypointItemBody extends LitElement {
         );
       }
     `;
+  }
+
+  static get properties() {
+    return {
+      /**
+       * Enables Anypoint legacy theme.
+       */
+      legacy: { type: Boolean, reflect: true }
+    };
   }
 
   render() {

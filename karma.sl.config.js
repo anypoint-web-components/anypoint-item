@@ -12,7 +12,7 @@ module.exports = (config) => {
     'SL_Firefox',
     'SL_Firefox-1',
     'SL_Safari',
-    'SL_IE_11',
+    // 'SL_IE_11',
     'SL_EDGE'
   ];
   if (process.env.TRAVIS) {

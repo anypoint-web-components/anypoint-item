@@ -38,6 +38,15 @@ class AnypointIconItem extends HoverableMixin(ControlStateMixin(ButtonStateMixin
     ];
   }
 
+  static get properties() {
+    return {
+      /**
+       * Enables Anypoint legacy theme.
+       */
+      legacy: { type: Boolean, reflect: true }
+    };
+  }
+
   render() {
     return html`
       <div class="content-icon">

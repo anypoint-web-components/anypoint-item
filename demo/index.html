@@ -1,28 +1,26 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
-
-    <title>anypoint-item demo</title>
-
-    <script type="module" src="../node_modules/@advanced-rest-client/arc-demo-helper/arc-demo-helper.js"></script>
-    <script type="module" src="../node_modules/@polymer/iron-icon/iron-icon.js"></script>
-    <script type="module" src="../node_modules/@anypoint-web-components/anypoint-icons/anypoint-icons.js"></script>
-    <script type="module" src="../node_modules/@anypoint-web-components/anypoint-styles/default-theme.js"></script>
-    <script type="module" src="../anypoint-item.js"></script>
-    <script type="module" src="../anypoint-icon-item.js"></script>
-    <script type="module" src="../anypoint-item-body.js"></script>
-
-    <style>
-    body {
-      font-family: var(--font-family) !important;
-
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <title>anypoint-item demo</title>
+  <style>
+    body.styled.dark {
+      --primary-background-color: #424242;
       --secondary-text-color: #616161;
     }
 
-    div[role="listbox"] {
-      border: 1px solid #e5e5e5;
+    .centered[role="main"] {
+      max-width: 1400px;
+    }
+
+    .circle {
+      width: 25px;
+      height: 25px;
+      background-color: red;
+      border-radius: 50%;
     }
 
     .avatar {
@@ -37,148 +35,10 @@
     .blue {
       background-color: #BBDEFB;
     }
-    </style>
-  </head>
-  <body>
-    <div class="vertical-section-container centered">
-      <h3>Anypoint-items are list elements, to be used in an anypoint-listbox or an element with <i>role="listbox"</i></h3>
-      <arc-demo-helper>
-        <template>
-          <div role="listbox">
-            <anypoint-item>Option 1</anypoint-item>
-            <anypoint-item>Option 2</anypoint-item>
-            <anypoint-item>Option 3</anypoint-item>
-            <anypoint-item>
-              <p>Paragraph as a child</p>
-            </anypoint-item>
-          </div>
-        </template>
-      </arc-demo-helper>
-
-      <h3>They can be styled using custom properties</h3>
-      <arc-demo-helper>
-        <template>
-          <div role="listbox">
-            <anypoint-item class="my-theme">Option 1</anypoint-item>
-            <anypoint-item class="my-theme">Option 2</anypoint-item>
-            <anypoint-item class="my-theme">Option 3</anypoint-item>
-          </div>
-          <style>
-            anypoint-item.my-theme {
-              --anypoint-item-focused-color: #fff;
-              --anypoint-item-focused-background-color: #FF9800;
-              --anypoint-item-focused-font-weight: bold;
-            }
-          </style>
-        </template>
-      </arc-demo-helper>
-
-      <h3>Add an icon (or any other element) as a leading element by adding <i>slot="item-icon"</i> attribute</h3>
-      <arc-demo-helper>
-        <template>
-          <div role="listbox">
-            <anypoint-icon-item>
-              <iron-icon icon="anypoint:add" slot="item-icon"></iron-icon> Add
-            </anypoint-icon-item>
-            <anypoint-icon-item>
-              <iron-icon icon="anypoint:refresh" slot="item-icon"></iron-icon> Refresh
-            </anypoint-icon-item>
-            <anypoint-icon-item>
-              <span slot="item-icon" class="circle"></span> Refresh
-            </anypoint-icon-item>
-            <style>
-            .circle {
-              width: 25px;
-              height: 25px;
-              background-color: red;
-              border-radius: 50%;
-            }
-            </style>
-          </div>
-        </template>
-      </arc-demo-helper>
-
-      <h3>For two-line items, use a anypoint-item-body inside a anypoint-item or anypoint-icon-item</h3>
-    <arc-demo-helper>
-      <template>
-        <div role="listbox">
-          <anypoint-item>
-            <anypoint-item-body two-line>
-              <div>Profile Photo</div>
-              <div secondary>Change your profile photo</div>
-            </anypoint-item-body>
-          </anypoint-item>
-
-          <anypoint-icon-item>
-            <iron-icon icon="anypoint:add" slot="item-icon">
-            </iron-icon>
-            <anypoint-item-body two-line>
-              <div>(650) 555-1234</div>
-              <div secondary>Mobile</div>
-            </anypoint-item-body>
-          </anypoint-icon-item>
-
-          <anypoint-icon-item>
-            <div class="avatar blue" slot="item-icon"></div>
-            <anypoint-item-body two-line>
-              <div>Alphonso Engelking</div>
-              <div secondary>Change photo</div>
-            </anypoint-item-body>
-          </anypoint-icon-item>
-        </div>
-      </template>
-    </arc-demo-helper>
-
-    <h3>Complex layouts are usually a combination of all these elements</h3>
-    <arc-demo-helper>
-      <template>
-        <div role="listbox">
-          <anypoint-icon-item>
-            <div class="avatar blue" slot="item-icon"></div>
-            <anypoint-item-body two-line>
-              <div>Photos</div>
-              <div secondary>Jan 9, 2014</div>
-            </anypoint-item-body>
-            <anypoint-icon-button icon="star" alt="favourite this!">
-            </anypoint-icon-button>
-          </anypoint-icon-item>
-          <anypoint-icon-item>
-            <div class="avatar" slot="item-icon"></div>
-            <anypoint-item-body two-line>
-              <div>Recipes</div>
-              <div secondary>Jan 17, 2014</div>
-            </anypoint-item-body>
-            <anypoint-icon-button icon="star" alt="favourite this!">
-            </anypoint-icon-button>
-          </anypoint-icon-item>
-        </div>
-      </template>
-    </arc-demo-helper>
-
-    <h3>anypoint-items can be used as links</h3>
-    <arc-demo-helper>
-      <template>
-        <custom-style>
-          <style is="custom-style">
-            .anypoint-item-link {
-              color: inherit;
-              text-decoration: none;
-            }
-          </style>
-        </custom-style>
-        <div role="listbox">
-          <a class="anypoint-item-link" href="#inbox" tabindex="-1">
-            <anypoint-item>Inbox</anypoint-item>
-          </a>
-          <a class="anypoint-item-link" href="#starred" tabindex="-1">
-            <anypoint-item>Starred</anypoint-item>
-          </a>
-          <a class="anypoint-item-link" href="#sent" tabindex="-1">
-            <anypoint-item>Sent mail</anypoint-item>
-          </a>
-        </div>
-      </template>
-    </arc-demo-helper>
-    </div>
-  </body>
+  </style>
+</head>
+<body class="styled">
+  <div id="demo"></div>
+  <script type="module" src="./index.js"></script>
+</body>
 </html>
