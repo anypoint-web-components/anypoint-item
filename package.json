@@ -1,6 +1,6 @@
 {
   "name": "@anypoint-web-components/anypoint-item",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Anypoint list item",
   "license": "Apache-2.0",
   "main": "anypoint-item.js",
