@@ -41,10 +41,22 @@ class AnypointIconItem extends HoverableMixin(ControlStateMixin(ButtonStateMixin
   static get properties() {
     return {
       /**
-       * Enables Anypoint legacy theme.
+       * Enables compatibility with Anypoint components.
        */
-      legacy: { type: Boolean, reflect: true }
+      compatibility: { type: Boolean, reflect: true },
+      /**
+       * @deprecated Use `compatibility` instead
+       */
+      legacy: { type: Boolean },
     };
+  }
+
+  get legacy() {
+    return this.compatibility;
+  }
+
+  set legacy(value) {
+    this.compatibility = value;
   }
 
   render() {

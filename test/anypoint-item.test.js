@@ -1,6 +1,6 @@
 import { aTimeout, fixture, expect, assert } from '@open-wc/testing';
 import * as MockInteractions from '@polymer/iron-test-helpers/mock-interactions.js';
-import sinon from 'sinon/pkg/sinon-esm.js';
+import * as sinon from 'sinon/pkg/sinon-esm.js';
 import '../anypoint-item.js';
 import '../anypoint-icon-item.js';
 
@@ -45,6 +45,14 @@ describe('<anypoint-item>', () => {
     return await fixture(`<anypoint-icon-item tabindex="-1">item</anypoint-icon-item>`);
   }
 
+  async function itemBasicFixture() {
+    return await fixture(`<anypoint-item>item</anypoint-item>`);
+  }
+
+  async function iconItemBasicFixture() {
+    return await fixture(`<anypoint-icon-item>item</anypoint-icon-item>`);
+  }
+
   describe('anypoint-item basic', () => {
     let item;
     let clickHandler;
@@ -57,7 +65,7 @@ describe('<anypoint-item>', () => {
 
     it('space triggers a click event', async () => {
       MockInteractions.pressSpace(item);
-      await aTimeout(40);
+      await aTimeout(50);
       expect(clickHandler.callCount).to.be.equal(1);
     });
 
@@ -113,6 +121,34 @@ describe('<anypoint-item>', () => {
       MockInteractions.pressSpace(innerInput);
       await aTimeout(40);
       expect(itemClickHandler.callCount).to.be.equal(0);
+    });
+  });
+
+  describe('compatibility mode', () => {
+    it('sets compatibility on item when setting legacy', async () => {
+      const element = await itemBasicFixture();
+      element.legacy = true;
+      assert.isTrue(element.legacy, 'legacy is set');
+      assert.isTrue(element.compatibility, 'compatibility is set');
+    });
+
+    it('returns compatibility value from item when getting legacy', async () => {
+      const element = await itemBasicFixture();
+      element.compatibility = true;
+      assert.isTrue(element.legacy, 'legacy is set');
+    });
+
+    it('sets compatibility on icon item when setting legacy', async () => {
+      const element = await iconItemBasicFixture();
+      element.legacy = true;
+      assert.isTrue(element.legacy, 'legacy is set');
+      assert.isTrue(element.compatibility, 'compatibility is set');
+    });
+
+    it('returns compatibility value from icon item when getting legacy', async () => {
+      const element = await iconItemBasicFixture();
+      element.compatibility = true;
+      assert.isTrue(element.legacy, 'legacy is set');
     });
   });
 

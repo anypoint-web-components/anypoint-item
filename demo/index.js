@@ -13,16 +13,16 @@ class ComponentDemo extends ArcDemoPage {
   constructor() {
     super();
     this.initObservableProperties([
-      'demoLegacy',
-      'twoLineLegacy',
-      'iconLegacy',
+      'demoCompatibility',
+      'twoLineCompatibility',
+      'iconCompatibility',
       'demoWithIcon',
       'demoTwoLines',
-      'complexLegacy',
-      'linksLegacy'
+      'complexCompatibility',
+      'linksCompatibility'
     ]);
     this._componentName = 'anypoint-dropdown-menu';
-    this.demoStates = ['Normal', 'Legacy'];
+    this.demoStates = ['Material Design', 'Anypoint'];
     this._mainDemoStateHandler = this._mainDemoStateHandler.bind(this);
     this._twoLineDemoStateHandler = this._twoLineDemoStateHandler.bind(this);
     this._iconDemoStateHandler = this._iconDemoStateHandler.bind(this);
@@ -35,10 +35,10 @@ class ComponentDemo extends ArcDemoPage {
     const state = e.detail.value;
     switch (state) {
       case 0:
-        this.demoLegacy = false;
+        this.demoCompatibility = false;
         break;
       case 1:
-        this.demoLegacy = true;
+        this.demoCompatibility = true;
         break;
     }
   }
@@ -47,10 +47,10 @@ class ComponentDemo extends ArcDemoPage {
     const state = e.detail.value;
     switch (state) {
       case 0:
-        this.twoLineLegacy = false;
+        this.twoLineCompatibility = false;
         break;
       case 1:
-        this.twoLineLegacy = true;
+        this.twoLineCompatibility = true;
         break;
     }
   }
@@ -59,10 +59,10 @@ class ComponentDemo extends ArcDemoPage {
     const state = e.detail.value;
     switch (state) {
       case 0:
-        this.iconLegacy = false;
+        this.iconCompatibility = false;
         break;
       case 1:
-        this.iconLegacy = true;
+        this.iconCompatibility = true;
         break;
     }
   }
@@ -71,10 +71,10 @@ class ComponentDemo extends ArcDemoPage {
     const state = e.detail.value;
     switch (state) {
       case 0:
-        this.complexLegacy = false;
+        this.complexCompatibility = false;
         break;
       case 1:
-        this.complexLegacy = true;
+        this.complexCompatibility = true;
         break;
     }
   }
@@ -83,10 +83,10 @@ class ComponentDemo extends ArcDemoPage {
     const state = e.detail.value;
     switch (state) {
       case 0:
-        this.linksLegacy = false;
+        this.linksCompatibility = false;
         break;
       case 1:
-        this.linksLegacy = true;
+        this.linksCompatibility = true;
         break;
     }
   }
@@ -100,7 +100,7 @@ class ComponentDemo extends ArcDemoPage {
     const {
       demoStates,
       darkThemeActive,
-      demoLegacy
+      demoCompatibility
     } = this;
     return html`<section class="documentation-section">
     <h3>Interactive demo</h3>
@@ -116,16 +116,16 @@ class ComponentDemo extends ArcDemoPage {
       <div
         role="listbox"
         slot="content">
-        <anypoint-item ?legacy="${demoLegacy}">
+        <anypoint-item ?compatibility="${demoCompatibility}">
           Option 1
         </anypoint-item>
-        <anypoint-item ?legacy="${demoLegacy}">
+        <anypoint-item ?compatibility="${demoCompatibility}">
           Option 2
         </anypoint-item>
-        <anypoint-item ?legacy="${demoLegacy}">
+        <anypoint-item ?compatibility="${demoCompatibility}">
           Option 3
         </anypoint-item>
-        <anypoint-item ?legacy="${demoLegacy}">
+        <anypoint-item ?compatibility="${demoCompatibility}">
           <p>Paragraph as a child</p>
         </anypoint-item>
       </div>
@@ -156,7 +156,7 @@ class ComponentDemo extends ArcDemoPage {
     const {
       demoStates,
       darkThemeActive,
-      twoLineLegacy
+      twoLineCompatibility
     } = this;
     return html`<section class="documentation-section">
     <h3>Two line list item</h3>
@@ -176,22 +176,22 @@ class ComponentDemo extends ArcDemoPage {
       <div
         role="listbox"
         slot="content">
-        <anypoint-item ?legacy="${twoLineLegacy}">
-          <anypoint-item-body twoline ?legacy="${twoLineLegacy}">
+        <anypoint-item ?compatibility="${twoLineCompatibility}">
+          <anypoint-item-body twoline ?compatibility="${twoLineCompatibility}">
             <div>Pawel Psztyc</div>
             <div secondary>Sr. Software Engineer</div>
           </anypoint-item-body>
         </anypoint-item>
 
-        <anypoint-item ?legacy="${twoLineLegacy}">
-          <anypoint-item-body twoline ?legacy="${twoLineLegacy}">
+        <anypoint-item ?compatibility="${twoLineCompatibility}">
+          <anypoint-item-body twoline ?compatibility="${twoLineCompatibility}">
             <div>John Smith</div>
             <div secondary>QA specialist</div>
           </anypoint-item-body>
         </anypoint-item>
 
-        <anypoint-item ?legacy="${twoLineLegacy}">
-          <anypoint-item-body twoline ?legacy="${twoLineLegacy}">
+        <anypoint-item ?compatibility="${twoLineCompatibility}">
+          <anypoint-item-body twoline ?compatibility="${twoLineCompatibility}">
             <div>John Q. Public</div>
             <div secondary>Interaction designer</div>
           </anypoint-item-body>
@@ -205,7 +205,7 @@ class ComponentDemo extends ArcDemoPage {
     const {
       demoStates,
       darkThemeActive,
-      iconLegacy
+      iconCompatibility
     } = this;
     return html`<section class="documentation-section">
     <h3>Icon item</h3>
@@ -220,13 +220,13 @@ class ComponentDemo extends ArcDemoPage {
       <div
         role="listbox"
         slot="content">
-        <anypoint-icon-item ?legacy="${iconLegacy}">
+        <anypoint-icon-item ?compatibility="${iconCompatibility}">
           <iron-icon icon="anypoint:add" slot="item-icon"></iron-icon> Add
         </anypoint-icon-item>
-        <anypoint-icon-item ?legacy="${iconLegacy}">
+        <anypoint-icon-item ?compatibility="${iconCompatibility}">
           <iron-icon icon="anypoint:refresh" slot="item-icon"></iron-icon> Refresh
         </anypoint-icon-item>
-        <anypoint-icon-item ?legacy="${iconLegacy}">
+        <anypoint-icon-item ?compatibility="${iconCompatibility}">
           <span slot="item-icon" class="circle"></span> Refresh
         </anypoint-icon-item>
       </div>
@@ -238,7 +238,7 @@ class ComponentDemo extends ArcDemoPage {
     const {
       demoStates,
       darkThemeActive,
-      complexLegacy
+      complexCompatibility
     } = this;
     return html`<section class="documentation-section">
     <h3>Complex layouts</h3>
@@ -254,27 +254,27 @@ class ComponentDemo extends ArcDemoPage {
       <div
         role="listbox"
         slot="content">
-        <anypoint-icon-item ?legacy="${complexLegacy}">
+        <anypoint-icon-item ?compatibility="${complexCompatibility}">
           <div class="avatar blue" slot="item-icon"></div>
-          <anypoint-item-body twoline ?legacy="${complexLegacy}">
+          <anypoint-item-body twoline ?compatibility="${complexCompatibility}">
             <div>Photos</div>
             <div secondary>Jan 9, 2014</div>
           </anypoint-item-body>
           <anypoint-icon-button
-            ?legacy="${complexLegacy}"
+            ?compatibility="${complexCompatibility}"
             aria-label="Activate to toggle favourite">
             <iron-icon icon="star" alt="favourite this!"></iron-icon>
           </anypoint-icon-button>
         </anypoint-icon-item>
 
-        <anypoint-icon-item ?legacy="${complexLegacy}">
+        <anypoint-icon-item ?compatibility="${complexCompatibility}">
           <div class="avatar" slot="item-icon"></div>
-          <anypoint-item-body twoline ?legacy="${complexLegacy}">
+          <anypoint-item-body twoline ?compatibility="${complexCompatibility}">
             <div>Recipes</div>
             <div secondary>Jan 17, 2014</div>
           </anypoint-item-body>
           <anypoint-icon-button
-            ?legacy="${complexLegacy}"
+            ?compatibility="${complexCompatibility}"
             aria-label="Activate to toggle favourite">
             <iron-icon icon="star" alt="favourite this!"></iron-icon>
           </anypoint-icon-button>
@@ -288,7 +288,7 @@ class ComponentDemo extends ArcDemoPage {
     const {
       demoStates,
       darkThemeActive,
-      linksLegacy
+      linksCompatibility
     } = this;
     return html`<section class="documentation-section">
     <h3>Item as a link</h3>
@@ -305,13 +305,13 @@ class ComponentDemo extends ArcDemoPage {
         role="listbox"
         slot="content">
         <a class="anypoint-item-link" href="#inbox" tabindex="-1">
-          <anypoint-item ?legacy="${linksLegacy}">Inbox</anypoint-item>
+          <anypoint-item ?compatibility="${linksCompatibility}">Inbox</anypoint-item>
         </a>
         <a class="anypoint-item-link" href="#starred" tabindex="-1">
-          <anypoint-item ?legacy="${linksLegacy}">Starred</anypoint-item>
+          <anypoint-item ?compatibility="${linksCompatibility}">Starred</anypoint-item>
         </a>
         <a class="anypoint-item-link" href="#sent" tabindex="-1">
-          <anypoint-item ?legacy="${linksLegacy}">Sent mail</anypoint-item>
+          <anypoint-item ?compatibility="${linksCompatibility}">Sent mail</anypoint-item>
         </a>
       </div>
     </arc-interactive-demo>

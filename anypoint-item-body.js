@@ -42,8 +42,8 @@ class AnypointItemBody extends LitElement {
         margin-top: 4px;
       }
 
-      :host([legacy]:hover) > ::slotted([secondary]),
-      .anypoint-item[legacy]:hover > [secondary] {
+      :host([compatibility]:hover) > ::slotted([secondary]),
+      .anypoint-item[compatibility]:hover > [secondary] {
         color: var(
           --anypoint-item-secondary-focus-color,
           var(--anypoint-item-focus-color,
@@ -66,10 +66,22 @@ class AnypointItemBody extends LitElement {
   static get properties() {
     return {
       /**
-       * Enables Anypoint legacy theme.
+       * Enables compatibility with Anypoint components.
        */
-      legacy: { type: Boolean, reflect: true }
+      compatibility: { type: Boolean, reflect: true },
+      /**
+       * @deprecated Use `compatibility` instead
+       */
+      legacy: { type: Boolean },
     };
+  }
+
+  get legacy() {
+    return this.compatibility;
+  }
+
+  set legacy(value) {
+    this.compatibility = value;
   }
 
   render() {

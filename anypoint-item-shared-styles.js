@@ -14,8 +14,8 @@ export default css`
     transition: background-color 0.16s ease-in-out 0s;
   }
 
-  :host([legacy]),
-  .anypoint-item[legacy] {
+  :host([compatibility]),
+  .anypoint-item[compatibility] {
     padding: var(--anypoint-item-padding, 0px 10px);
     min-height: var(--anypoint-item-min-height, 40px);
 
@@ -27,8 +27,8 @@ export default css`
     border-right-style: solid;
   }
 
-  :host([legacy]:hover),
-  .anypoint-item[legacy]:hover {
+  :host([compatibility]:hover),
+  .anypoint-item[compatibility]:hover {
     color: var(--anypoint-item-focus-color, var(--anypoint-color-coreBlue3));
     border-left-color: var(
       --anypoint-item-border-left-hover-color,
@@ -54,8 +54,8 @@ export default css`
     font-weight: var(--anypoint-item-focused-font-weight, initial);
   }
 
-  :host([legacy]:focus),
-  .anypoint-item[legacy]:focus {
+  :host([compatibility]:focus),
+  .anypoint-item[compatibility]:focus {
     color: var(--anypoint-item-focused-color, var(--anypoint-color-coreBlue3));
   }
 
@@ -72,8 +72,8 @@ export default css`
     pointer-events: none;
   }
 
-  :host([legacy]:focus):before,
-  .anypoint-item[legacy]:focus:before {
+  :host([compatibility]:focus):before,
+  .anypoint-item[compatibility]:focus:before {
     background: var(--anypoint-item-before-background);
     opacity: var(--anypoint-item-before-opacity);
   }
@@ -109,9 +109,9 @@ export default css`
     background-color: var(--anypoint-item-pressed-background-color, #BDBDBD);
   }
 
-  :host([legacy][pressed]),
-  .anypoint-item[legacy][pressed],
-  .anypoint-item[legacy].pressed {
+  :host([compatibility][pressed]),
+  .anypoint-item[compatibility][pressed],
+  .anypoint-item[compatibility].pressed {
     background-color: var(--anypoint-item-pressed-background-color, initial);
   }
 `;
