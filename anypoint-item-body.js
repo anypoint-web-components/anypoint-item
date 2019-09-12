@@ -37,8 +37,7 @@ class AnypointItemBody extends LitElement {
         font-size: var(--font-body-font-size);
         letter-spacing: var(--font-body-letter-spacing);
         font-weight: var(--font-body-font-weight);
-
-        color: var(--paper-item-body-secondary-color, var(--secondary-text-color));
+        color: var(--anypoint-item-body-secondary-color, var(--secondary-text-color));
         margin-top: 4px;
       }
 
