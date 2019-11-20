@@ -5,10 +5,14 @@
  *   https://github.com/Polymer/tools/tree/master/packages/gen-typescript-declarations
  *
  * To modify these typings, edit the source file(s):
- *   anypoint-item-body.js
+ *   index.js
  */
 
 
 // tslint:disable:variable-name Describing an API that's defined elsewhere.
 
-import {AnypointItemBody} from './src/AnypointItemBody.js';
+export {AnypointIconItem} from './src/AnypointIconItem.js';
+
+export {AnypointItemBody} from './src/AnypointItemBody.js';
+
+export {AnypointItem} from './src/AnypointItem.js';

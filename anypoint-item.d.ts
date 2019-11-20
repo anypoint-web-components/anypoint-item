@@ -10,27 +10,5 @@
 
 
 // tslint:disable:variable-name Describing an API that's defined elsewhere.
-// tslint:disable:no-any describes the API as best we are able today
 
-import {LitElement, html, css} from 'lit-element';
-
-import {ButtonStateMixin, ControlStateMixin, HoverableMixin} from '@anypoint-web-components/anypoint-control-mixins/anypoint-control-mixins.js';
-
-declare namespace AnypointUi {
-
-  /**
-   * `anypoint-item`
-   * An Anypoint list item.
-   */
-  class AnypointItem {
-    render(): any;
-    connectedCallback(): void;
-  }
-}
-
-declare global {
-
-  interface HTMLElementTagNameMap {
-    "anypoint-item": AnypointUi.AnypointItem;
-  }
-}
+import {AnypointItem} from './src/AnypointItem.js';
