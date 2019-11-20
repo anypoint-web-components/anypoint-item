@@ -14,7 +14,7 @@ import styles from './anypoint-item-shared-styles.js';
  * @memberof AnypointUi
  */
 class AnypointItem extends HoverableMixin(ControlStateMixin(ButtonStateMixin(LitElement))) {
-  static get styles() {
+  get styles() {
     return [
       styles,
       css`
@@ -49,7 +49,7 @@ class AnypointItem extends HoverableMixin(ControlStateMixin(ButtonStateMixin(Lit
   }
 
   render() {
-    return html`
+    return html`<style>${this.styles}</style>
       <slot></slot>
     `;
   }

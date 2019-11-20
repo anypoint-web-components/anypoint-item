@@ -18,7 +18,7 @@ import styles from './anypoint-item-shared-styles.js';
  * @memberof AnypointUi
  */
 class AnypointIconItem extends HoverableMixin(ControlStateMixin(ButtonStateMixin(LitElement))) {
-  static get styles() {
+  get styles() {
     return [
       styles,
       css`
@@ -60,7 +60,7 @@ class AnypointIconItem extends HoverableMixin(ControlStateMixin(ButtonStateMixin
   }
 
   render() {
-    return html`
+    return html`<style>${this.styles}</style>
       <div class="content-icon">
         <slot name="item-icon"></slot>
       </div>
