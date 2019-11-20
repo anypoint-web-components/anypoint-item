@@ -97,7 +97,7 @@ import { LitElement, html, css } from 'lit-element';
 import itemStyles from '@anypoint-web-components/anypoint-item/anypoint-item-shared-styles.js';
 
 class SampleElement extends LitElement {
-  static get styles() {
+  get styles() {
     return [
       itemStyles,
       css`...`;
@@ -105,7 +105,7 @@ class SampleElement extends LitElement {
   }
 
   render() {
-    return html`
+    return html`<style>${this.styles}</style>
     <anypoint-listbox>
       <button class="anypoint-item" role="option">Inbox</button>
       <button class="anypoint-item" role="option">Starred</button>

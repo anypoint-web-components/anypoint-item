@@ -8,7 +8,7 @@ import { LitElement, html, css } from 'lit-element';
  * @memberof AnypointUi
  */
 class AnypointItemBody extends LitElement {
-  static get styles() {
+  get styles() {
     return css`
       :host {
         overflow: hidden; /* needed for text-overflow: ellipsis to work on ff */
@@ -84,7 +84,7 @@ class AnypointItemBody extends LitElement {
   }
 
   render() {
-    return html`
+    return html`<style>${this.styles}</style>
       <slot></slot>
     `;
   }
