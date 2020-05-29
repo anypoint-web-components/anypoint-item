@@ -16,15 +16,14 @@ import {
   ButtonStateMixin,
   ControlStateMixin,
   HoverableMixin,
-} from '@anypoint-web-components/anypoint-control-mixins/anypoint-control-mixins.js';
+} from '@anypoint-web-components/anypoint-control-mixins';
 import styles from './ItemStyles.js';
+
+/* eslint-disable class-methods-use-this */
+
 /**
  * `anypoint-item`
  * An Anypoint list item.
- *
- * @customElement
- * @demo demo/index.html
- * @memberof AnypointUi
  */
 export class AnypointItem extends HoverableMixin(ControlStateMixin(ButtonStateMixin(LitElement))) {
   get styles() {

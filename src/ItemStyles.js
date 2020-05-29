@@ -12,8 +12,8 @@ License for the specific language governing permissions and limitations under
 the License.
 */
 import '@anypoint-web-components/anypoint-styles/colors.js';
-
 import { css } from 'lit-element';
+
 export default css`
   :host,
   .anypoint-item {

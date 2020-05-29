@@ -1,11 +1,10 @@
 import { LitElement, html, css } from 'lit-element';
+
+/* eslint-disable class-methods-use-this */
+
 /**
  * `anypoint-item`
  * An Anypoint list item with 2 or 3 lines.
- *
- * @customElement
- * @demo demo/index.html
- * @memberof AnypointUi
  */
 export class AnypointItemBody extends LitElement {
   get styles() {
