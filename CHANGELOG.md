@@ -48,3 +48,21 @@
 * adding sauce labs integration keys [8383f68](https://github.com/anypoint-web-components/anypoint-item/commit/8383f684ac6469af9e951cc911d95be846c6ff8f) by Pawel
 
 
+<a name="1.0.7"></a>
+## [1.0.7](https://github.com/anypoint-web-components/anypoint-item/compare/1.0.5...1.0.7) (2020-05-29)
+
+### Update
+
+* [ci skip] automated merge master->stage. syncing main branches [87e589b](https://github.com/anypoint-web-components/anypoint-item/commit/87e589b917a5e8b3f72ef8453a0545a01b849857) by Ci agent
+
+
+### Bug Fixes
+
+* fixing module definition [9d7be70](https://github.com/anypoint-web-components/anypoint-item/commit/9d7be707a1a9ff14e3eccbcba22d650a266eba3f) by Pawel
+
+
+### Refactor
+
+* upgrading project to open-wc standards [8eb6950](https://github.com/anypoint-web-components/anypoint-item/commit/8eb69507fc696af3e860b133dfeb094f008d67b5) by Pawel
+
+
