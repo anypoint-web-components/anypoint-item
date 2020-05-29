@@ -1,9 +1,10 @@
 {
   "name": "@anypoint-web-components/anypoint-item",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Anypoint list item",
   "license": "Apache-2.0",
-  "main": "anypoint-item.js",
+  "main": "index.js",
+  "module": "index.js",
   "keywords": [
     "web-components",
     "anypoint",
