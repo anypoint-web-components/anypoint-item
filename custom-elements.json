@@ -1,0 +1,201 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "anypoint-icon-item",
+      "path": "./anypoint-icon-item.js",
+      "description": "`anypoint-icon-item`\nAn Anypoint icon list item is a convenience element to make an item with icon. It is an\ninteractive list item with a fixed-width icon area.\nThis is useful if the icons are of varying widths, but you want the item\nbodies to line up. Use this like a `<anypoint-item>`. The child node with the slot\nname `item-icon` is placed in the icon area.",
+      "attributes": [
+        {
+          "name": "compatibility",
+          "description": "Enables compatibility with Anypoint components.",
+          "type": "boolean"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "CSSResult"
+        },
+        {
+          "name": "legacy",
+          "type": "boolean"
+        },
+        {
+          "name": "compatibility",
+          "attribute": "compatibility",
+          "description": "Enables compatibility with Anypoint components.",
+          "type": "boolean"
+        },
+        {
+          "name": "disabled",
+          "description": "If true the button is a toggle and is currently in the active state.",
+          "type": "boolean"
+        },
+        {
+          "name": "focused",
+          "description": "If true the element currently has focus.",
+          "type": "boolean"
+        },
+        {
+          "name": "hovered",
+          "description": "True when the element is currently hovered by a pointing device.",
+          "type": "boolean"
+        },
+        {
+          "name": "toggles",
+          "description": "If true, the button toggles the active state with each click or press\nof the space bar.",
+          "type": "boolean"
+        },
+        {
+          "name": "active",
+          "description": "If true, the button is a toggle and is currently in the active state.",
+          "type": "boolean"
+        },
+        {
+          "name": "pressed",
+          "description": "True when the element is currently being pressed as\nthe user is holding down the button on the element.",
+          "type": "boolean"
+        },
+        {
+          "name": "pointerDown",
+          "description": "True when the a pointer device is currently pointing on the element\nand is in \"down\" state.",
+          "type": "boolean"
+        },
+        {
+          "name": "receivedFocusFromKeyboard",
+          "description": "True when the element received focus from the keyboard.",
+          "type": "boolean"
+        },
+        {
+          "name": "ariaActiveAttribute",
+          "description": "The aria attribute to be set if the button is a toggle and in the\nactive state.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "anypoint-item-body",
+      "path": "./anypoint-item-body.js",
+      "description": "`anypoint-item`\nAn Anypoint list item with 2 or 3 lines.",
+      "attributes": [
+        {
+          "name": "compatibility",
+          "description": "Enables compatibility with Anypoint components.",
+          "type": "boolean"
+        },
+        {
+          "name": "twoLine",
+          "description": "Renders the item in a 2-line layout",
+          "type": "boolean"
+        },
+        {
+          "name": "threeLine",
+          "description": "Renders the item in a 3-line layout",
+          "type": "boolean"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "CSSResult"
+        },
+        {
+          "name": "legacy",
+          "type": "boolean"
+        },
+        {
+          "name": "compatibility",
+          "attribute": "compatibility",
+          "description": "Enables compatibility with Anypoint components.",
+          "type": "boolean"
+        },
+        {
+          "name": "twoLine",
+          "attribute": "twoLine",
+          "description": "Renders the item in a 2-line layout",
+          "type": "boolean"
+        },
+        {
+          "name": "threeLine",
+          "attribute": "threeLine",
+          "description": "Renders the item in a 3-line layout",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "anypoint-item",
+      "path": "./anypoint-item.js",
+      "description": "`anypoint-item`\nAn Anypoint list item.",
+      "attributes": [
+        {
+          "name": "compatibility",
+          "description": "Enables compatibility with Anypoint components.",
+          "type": "boolean"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "CSSResult"
+        },
+        {
+          "name": "legacy",
+          "type": "boolean"
+        },
+        {
+          "name": "compatibility",
+          "attribute": "compatibility",
+          "description": "Enables compatibility with Anypoint components.",
+          "type": "boolean"
+        },
+        {
+          "name": "disabled",
+          "description": "If true the button is a toggle and is currently in the active state.",
+          "type": "boolean"
+        },
+        {
+          "name": "focused",
+          "description": "If true the element currently has focus.",
+          "type": "boolean"
+        },
+        {
+          "name": "hovered",
+          "description": "True when the element is currently hovered by a pointing device.",
+          "type": "boolean"
+        },
+        {
+          "name": "toggles",
+          "description": "If true, the button toggles the active state with each click or press\nof the space bar.",
+          "type": "boolean"
+        },
+        {
+          "name": "active",
+          "description": "If true, the button is a toggle and is currently in the active state.",
+          "type": "boolean"
+        },
+        {
+          "name": "pressed",
+          "description": "True when the element is currently being pressed as\nthe user is holding down the button on the element.",
+          "type": "boolean"
+        },
+        {
+          "name": "pointerDown",
+          "description": "True when the a pointer device is currently pointing on the element\nand is in \"down\" state.",
+          "type": "boolean"
+        },
+        {
+          "name": "receivedFocusFromKeyboard",
+          "description": "True when the element received focus from the keyboard.",
+          "type": "boolean"
+        },
+        {
+          "name": "ariaActiveAttribute",
+          "description": "The aria attribute to be set if the button is a toggle and in the\nactive state.",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

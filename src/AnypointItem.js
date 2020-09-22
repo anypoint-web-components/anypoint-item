@@ -43,6 +43,7 @@ export class AnypointItem extends HoverableMixin(ControlStateMixin(ButtonStateMi
     return {
       /**
        * Enables compatibility with Anypoint components.
+       * @attribute
        */
       compatibility: { type: Boolean, reflect: true },
       /**

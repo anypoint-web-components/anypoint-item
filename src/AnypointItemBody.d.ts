@@ -10,8 +10,19 @@ export declare class AnypointItemBody extends LitElement {
 
   /**
    * Enables compatibility with Anypoint components.
+   * @attribute
    */
   compatibility: boolean;
+  /**
+   * Renders the item in a 2-line layout
+   * @attribute
+   */
+  twoLine: boolean;
+  /**
+   * Renders the item in a 3-line layout
+   * @attribute
+   */
+  threeLine: boolean;
   constructor();
   render(): TemplateResult;
 }

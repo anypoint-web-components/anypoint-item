@@ -65,12 +65,23 @@ export class AnypointItemBody extends LitElement {
     return {
       /**
        * Enables compatibility with Anypoint components.
+       * @attribute
        */
       compatibility: { type: Boolean, reflect: true },
       /**
        * @deprecated Use `compatibility` instead
        */
       legacy: { type: Boolean },
+      /**
+       * Renders the item in a 2-line layout
+       * @attribute
+       */
+      twoLine: { type: Boolean, reflect: true },
+      /**
+       * Renders the item in a 3-line layout
+       * @attribute
+       */
+      threeLine: { type: Boolean, reflect: true },
     };
   }
 
@@ -83,8 +94,6 @@ export class AnypointItemBody extends LitElement {
   }
 
   render() {
-    return html`<style>${this.styles}</style>
-      <slot></slot>
-    `;
+    return html`<style>${this.styles}</style><slot></slot>`;
   }
 }

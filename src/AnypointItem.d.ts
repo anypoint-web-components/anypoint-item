@@ -11,6 +11,7 @@ export declare class AnypointItem {
 
   /**
    * Enables compatibility with Anypoint components.
+   * @attribute
    */
   compatibility: boolean;
   render(): TemplateResult;
