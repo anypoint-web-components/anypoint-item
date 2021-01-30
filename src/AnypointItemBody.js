@@ -32,7 +32,8 @@ export class AnypointItemBody extends LitElement {
         white-space: nowrap;
       }
 
-      :host > ::slotted([secondary]) {
+      :host > ::slotted([secondary]),
+      :host > ::slotted([data-secondary]) {
         font-size: var(--font-body-font-size);
         letter-spacing: var(--font-body-letter-spacing);
         font-weight: var(--font-body-font-weight);
@@ -41,7 +42,9 @@ export class AnypointItemBody extends LitElement {
       }
 
       :host([compatibility]:hover) > ::slotted([secondary]),
-      .anypoint-item[compatibility]:hover > [secondary] {
+      :host([compatibility]:hover) > ::slotted([data-secondary]),
+      .anypoint-item[compatibility]:hover > [secondary],
+      .anypoint-item[compatibility]:hover > [data-secondary] {
         color: var(
           --anypoint-item-secondary-focus-color,
           var(--anypoint-item-focus-color,
