@@ -5,8 +5,11 @@ import { ButtonStateMixin, ControlStateMixin, HoverableMixin } from '@anypoint-w
  * `anypoint-item`
  * An Anypoint list item.
  */
-export declare class AnypointItem {
-  readonly styles: CSSResult;
+export declare class AnypointItem extends HoverableMixin(ControlStateMixin(ButtonStateMixin(LitElement))) {
+  get styles(): CSSResult;
+  /**
+   * @deprecated Use `compatibility` instead.
+   */
   legacy: boolean;
 
   /**
@@ -16,8 +19,4 @@ export declare class AnypointItem {
   compatibility: boolean;
   render(): TemplateResult;
   connectedCallback(): void;
-}
-
-export declare interface AnypointItem extends ButtonStateMixin, HoverableMixin, ControlStateMixin, LitElement {
-
 }

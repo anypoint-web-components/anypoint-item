@@ -4,57 +4,89 @@ import * as sinon from 'sinon/pkg/sinon-esm.js';
 import '../anypoint-item.js';
 import '../anypoint-icon-item.js';
 
+/** @typedef {import('../').AnypointItem} AnypointItem */
+
 describe('<anypoint-item>', () => {
+  /**
+   * @returns {Promise<HTMLDivElement>}
+   */
   async function itemFixture() {
-    return await fixture(`<div role="listbox">
+    return fixture(`<div role="listbox">
       <anypoint-item>item</anypoint-item>
     </div>`);
   }
 
+  /**
+   * @returns {Promise<HTMLDivElement>}
+   */
   async function iconItemFixture() {
-    return await fixture(`<div role="listbox">
+    return fixture(`<div role="listbox">
       <anypoint-icon-item>item</anypoint-icon-item>
     </div>`);
   }
 
+  /**
+   * @returns {Promise<HTMLDivElement>}
+   */
   async function itemWithInputFixture() {
-    return await fixture(`<div role="list">
+    return fixture(`<div role="list">
       <anypoint-item><input></anypoint-item>
     </div>`);
   }
 
+  /**
+   * @returns {Promise<HTMLDivElement>}
+   */
   async function iconItemWithInputFixture() {
-    return await fixture(`<div role="list">
+    return fixture(`<div role="list">
       <anypoint-icon-item><input></anypoint-icon-item>
     </div>`);
   }
 
+  /**
+   * @returns {Promise<AnypointItem>}
+   */
   async function itemRoleFixture() {
-    return await fixture(`<anypoint-item role="button">item</anypoint-item>`);
+    return fixture(`<anypoint-item role="button">item</anypoint-item>`);
   }
 
+  /**
+   * @returns {Promise<AnypointItem>}
+   */
   async function itemTabindexFixture() {
-    return await fixture(`<anypoint-item tabindex="-1">item</anypoint-item>`);
+    return fixture(`<anypoint-item tabindex="-1">item</anypoint-item>`);
   }
 
+  /**
+   * @returns {Promise<AnypointItem>}
+   */
   async function iconItemRoleFixture() {
-    return await fixture(`<anypoint-icon-item role="button">item</anypoint-icon-item>`);
+    return fixture(`<anypoint-icon-item role="button">item</anypoint-icon-item>`);
   }
 
+  /**
+   * @returns {Promise<AnypointItem>}
+   */
   async function iconItemTabindexFixture() {
-    return await fixture(`<anypoint-icon-item tabindex="-1">item</anypoint-icon-item>`);
+    return fixture(`<anypoint-icon-item tabindex="-1">item</anypoint-icon-item>`);
   }
 
+  /**
+   * @returns {Promise<AnypointItem>}
+   */
   async function itemBasicFixture() {
-    return await fixture(`<anypoint-item>item</anypoint-item>`);
+    return fixture(`<anypoint-item>item</anypoint-item>`);
   }
 
+  /**
+   * @returns {Promise<AnypointItem>}
+   */
   async function iconItemBasicFixture() {
-    return await fixture(`<anypoint-icon-item>item</anypoint-icon-item>`);
+    return fixture(`<anypoint-icon-item>item</anypoint-icon-item>`);
   }
 
   describe('anypoint-item basic', () => {
-    let item;
+    let item = /** @type AnypointItem */ (null);
     let clickHandler;
     beforeEach(async () => {
       const element = await itemFixture();
@@ -65,7 +97,7 @@ describe('<anypoint-item>', () => {
 
     it('space triggers a click event', async () => {
       MockInteractions.pressSpace(item);
-      await aTimeout(50);
+      await aTimeout(80);
       expect(clickHandler.callCount).to.be.equal(1);
     });
 
@@ -76,8 +108,8 @@ describe('<anypoint-item>', () => {
     });
   });
 
-  describe('anypoint-icon-item basic', function() {
-    let item;
+  describe('anypoint-icon-item basic', () => {
+    let item = /** @type AnypointItem */ (null);
     let clickHandler;
     beforeEach(async () => {
       const element = await iconItemFixture();
@@ -99,7 +131,7 @@ describe('<anypoint-item>', () => {
     });
   });
 
-  describe('clickable element inside item', function() {
+  describe('clickable element inside item', () => {
     it('anypoint-item: space in child native input does not trigger a click event', async () => {
       const f = await itemWithInputFixture();
       const outerItem = f.querySelector('anypoint-item');
@@ -152,7 +184,7 @@ describe('<anypoint-item>', () => {
     });
   });
 
-  describe('item a11y tests', function() {
+  describe('item a11y tests', () => {
     it('item has role="listitem"', async () => {
       const element = await itemFixture();
       const item = element.querySelector('anypoint-item');

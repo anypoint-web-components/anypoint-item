@@ -5,7 +5,10 @@ import { TemplateResult, LitElement, CSSResult } from 'lit-element';
  * An Anypoint list item with 2 or 3 lines.
  */
 export declare class AnypointItemBody extends LitElement {
-  readonly styles: CSSResult;
+  get styles(): CSSResult;
+  /**
+   * @deprecated Use `compatibility` instead.
+   */
   legacy: boolean;
 
   /**

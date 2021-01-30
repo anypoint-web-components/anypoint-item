@@ -12,11 +12,7 @@ License for the specific language governing permissions and limitations under
 the License.
 */
 import { LitElement, html, css } from 'lit-element';
-import {
-  ButtonStateMixin,
-  ControlStateMixin,
-  HoverableMixin,
-} from '@anypoint-web-components/anypoint-control-mixins';
+import { ButtonStateMixin, ControlStateMixin, HoverableMixin } from '@anypoint-web-components/anypoint-control-mixins';
 import styles from './ItemStyles.js';
 
 /* eslint-disable class-methods-use-this */

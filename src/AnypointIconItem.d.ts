@@ -9,8 +9,11 @@ import { ButtonStateMixin, ControlStateMixin, HoverableMixin } from '@anypoint-w
  * bodies to line up. Use this like a `<anypoint-item>`. The child node with the slot
  * name `item-icon` is placed in the icon area.
  */
-export declare class AnypointIconItem {
-  readonly styles: CSSResult;
+export declare class AnypointIconItem extends HoverableMixin(ControlStateMixin(ButtonStateMixin(LitElement))) {
+  get styles(): CSSResult;
+  /**
+   * @deprecated Use `compatibility` instead.
+   */
   legacy: boolean;
 
   /**
@@ -20,8 +23,4 @@ export declare class AnypointIconItem {
   compatibility: boolean;
   render(): TemplateResult;
   connectedCallback(): void;
-}
-
-export declare interface AnypointIconItem extends ButtonStateMixin, HoverableMixin, ControlStateMixin, LitElement {
-
 }

@@ -10,22 +10,6 @@
           "name": "compatibility",
           "description": "Enables compatibility with Anypoint components.",
           "type": "boolean"
-        }
-      ],
-      "properties": [
-        {
-          "name": "styles",
-          "type": "CSSResult"
-        },
-        {
-          "name": "legacy",
-          "type": "boolean"
-        },
-        {
-          "name": "compatibility",
-          "attribute": "compatibility",
-          "description": "Enables compatibility with Anypoint components.",
-          "type": "boolean"
         },
         {
           "name": "disabled",
@@ -35,11 +19,6 @@
         {
           "name": "focused",
           "description": "If true the element currently has focus.",
-          "type": "boolean"
-        },
-        {
-          "name": "hovered",
-          "description": "True when the element is currently hovered by a pointing device.",
           "type": "boolean"
         },
         {
@@ -58,6 +37,63 @@
           "type": "boolean"
         },
         {
+          "name": "ariaActiveAttribute",
+          "description": "The aria attribute to be set if the button is a toggle and in the\nactive state.",
+          "type": "string"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "CSSResult"
+        },
+        {
+          "name": "legacy",
+          "type": "boolean",
+          "deprecatedMessage": "Use `compatibility` instead."
+        },
+        {
+          "name": "compatibility",
+          "attribute": "compatibility",
+          "description": "Enables compatibility with Anypoint components.",
+          "type": "boolean"
+        },
+        {
+          "name": "hovered",
+          "description": "True when the element is currently hovered by a pointing device.",
+          "type": "boolean"
+        },
+        {
+          "name": "disabled",
+          "attribute": "disabled",
+          "description": "If true the button is a toggle and is currently in the active state.",
+          "type": "boolean"
+        },
+        {
+          "name": "focused",
+          "attribute": "focused",
+          "description": "If true the element currently has focus.",
+          "type": "boolean"
+        },
+        {
+          "name": "toggles",
+          "attribute": "toggles",
+          "description": "If true, the button toggles the active state with each click or press\nof the space bar.",
+          "type": "boolean"
+        },
+        {
+          "name": "active",
+          "attribute": "active",
+          "description": "If true, the button is a toggle and is currently in the active state.",
+          "type": "boolean"
+        },
+        {
+          "name": "pressed",
+          "attribute": "pressed",
+          "description": "True when the element is currently being pressed as\nthe user is holding down the button on the element.",
+          "type": "boolean"
+        },
+        {
           "name": "pointerDown",
           "description": "True when the a pointer device is currently pointing on the element\nand is in \"down\" state.",
           "type": "boolean"
@@ -69,8 +105,39 @@
         },
         {
           "name": "ariaActiveAttribute",
+          "attribute": "ariaActiveAttribute",
           "description": "The aria attribute to be set if the button is a toggle and in the\nactive state.",
           "type": "string"
+        }
+      ],
+      "events": [
+        {
+          "name": "hoverchange",
+          "description": "When the `hover` property has changed"
+        },
+        {
+          "name": "focusedchange",
+          "description": "When the `focused` property has changed"
+        },
+        {
+          "name": "disabledchange",
+          "description": "When the `disabled` property has changed"
+        },
+        {
+          "name": "pressedchange",
+          "description": "When the `pressed` property has changed"
+        },
+        {
+          "name": "activechange",
+          "description": "When the `active` property has changed"
+        },
+        {
+          "name": "pressed-changed",
+          "description": "This event is deprecated"
+        },
+        {
+          "name": "active-changed",
+          "description": "This event is deprecated"
         }
       ]
     },
@@ -102,7 +169,8 @@
         },
         {
           "name": "legacy",
-          "type": "boolean"
+          "type": "boolean",
+          "deprecatedMessage": "Use `compatibility` instead."
         },
         {
           "name": "compatibility",
@@ -133,22 +201,6 @@
           "name": "compatibility",
           "description": "Enables compatibility with Anypoint components.",
           "type": "boolean"
-        }
-      ],
-      "properties": [
-        {
-          "name": "styles",
-          "type": "CSSResult"
-        },
-        {
-          "name": "legacy",
-          "type": "boolean"
-        },
-        {
-          "name": "compatibility",
-          "attribute": "compatibility",
-          "description": "Enables compatibility with Anypoint components.",
-          "type": "boolean"
         },
         {
           "name": "disabled",
@@ -158,11 +210,6 @@
         {
           "name": "focused",
           "description": "If true the element currently has focus.",
-          "type": "boolean"
-        },
-        {
-          "name": "hovered",
-          "description": "True when the element is currently hovered by a pointing device.",
           "type": "boolean"
         },
         {
@@ -181,6 +228,63 @@
           "type": "boolean"
         },
         {
+          "name": "ariaActiveAttribute",
+          "description": "The aria attribute to be set if the button is a toggle and in the\nactive state.",
+          "type": "string"
+        }
+      ],
+      "properties": [
+        {
+          "name": "styles",
+          "type": "CSSResult"
+        },
+        {
+          "name": "legacy",
+          "type": "boolean",
+          "deprecatedMessage": "Use `compatibility` instead."
+        },
+        {
+          "name": "compatibility",
+          "attribute": "compatibility",
+          "description": "Enables compatibility with Anypoint components.",
+          "type": "boolean"
+        },
+        {
+          "name": "hovered",
+          "description": "True when the element is currently hovered by a pointing device.",
+          "type": "boolean"
+        },
+        {
+          "name": "disabled",
+          "attribute": "disabled",
+          "description": "If true the button is a toggle and is currently in the active state.",
+          "type": "boolean"
+        },
+        {
+          "name": "focused",
+          "attribute": "focused",
+          "description": "If true the element currently has focus.",
+          "type": "boolean"
+        },
+        {
+          "name": "toggles",
+          "attribute": "toggles",
+          "description": "If true, the button toggles the active state with each click or press\nof the space bar.",
+          "type": "boolean"
+        },
+        {
+          "name": "active",
+          "attribute": "active",
+          "description": "If true, the button is a toggle and is currently in the active state.",
+          "type": "boolean"
+        },
+        {
+          "name": "pressed",
+          "attribute": "pressed",
+          "description": "True when the element is currently being pressed as\nthe user is holding down the button on the element.",
+          "type": "boolean"
+        },
+        {
           "name": "pointerDown",
           "description": "True when the a pointer device is currently pointing on the element\nand is in \"down\" state.",
           "type": "boolean"
@@ -192,8 +296,39 @@
         },
         {
           "name": "ariaActiveAttribute",
+          "attribute": "ariaActiveAttribute",
           "description": "The aria attribute to be set if the button is a toggle and in the\nactive state.",
           "type": "string"
+        }
+      ],
+      "events": [
+        {
+          "name": "hoverchange",
+          "description": "When the `hover` property has changed"
+        },
+        {
+          "name": "focusedchange",
+          "description": "When the `focused` property has changed"
+        },
+        {
+          "name": "disabledchange",
+          "description": "When the `disabled` property has changed"
+        },
+        {
+          "name": "pressedchange",
+          "description": "When the `pressed` property has changed"
+        },
+        {
+          "name": "activechange",
+          "description": "When the `active` property has changed"
+        },
+        {
+          "name": "pressed-changed",
+          "description": "This event is deprecated"
+        },
+        {
+          "name": "active-changed",
+          "description": "This event is deprecated"
         }
       ]
     }
