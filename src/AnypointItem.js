@@ -30,6 +30,13 @@ export class AnypointItem extends HoverableMixin(ControlStateMixin(ButtonStateMi
           display: flex;
           flex-direction: row;
           align-items: center;
+          min-width: 0;
+        }
+        
+        .item {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
         }
       `,
     ];
@@ -59,7 +66,9 @@ export class AnypointItem extends HoverableMixin(ControlStateMixin(ButtonStateMi
 
   render() {
     return html`<style>${this.styles}</style>
-      <slot></slot>
+      <div class="item">
+        <slot></slot>
+      </div>
     `;
   }
 
