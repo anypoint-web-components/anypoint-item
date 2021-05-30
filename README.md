@@ -1,7 +1,3 @@
-[![Build Status](https://travis-ci.com/anypoint-web-components/anypoint-item.svg)](https://travis-ci.com/anypoint-web-components/anypoint-item)
-
-[![Published on NPM](https://img.shields.io/npm/v/@anypoint-web-components/anypoint-item.svg)](https://www.npmjs.com/package/@anypoint-web-components/anypoint-item)
-
 # anypoint-item, anypoint-item-body, anypoint-icon-item
 
 This component is based on Material Design text field and adjusted for Anypoint platform components.
@@ -14,12 +10,16 @@ A list item to be used in menus and list views.
 <anypoint-item>Item</anypoint-item>
 ```
 
+[![tests](https://github.com/anypoint-web-components/anypoint-item/actions/workflows/deployment.yml/badge.svg)](https://github.com/anypoint-web-components/anypoint-item/actions/workflows/deployment.yml)
+
+[![Published on NPM](https://img.shields.io/npm/v/@anypoint-web-components/anypoint-item.svg)](https://www.npmjs.com/package/@anypoint-web-components/anypoint-item)
+
 ## Styling options
 
 The element has two built-in themes:
 
--   Material Design - Default style
--   Anypoint Design - Enabled by adding `legacy` attribute to the elements.
+- Material Design - Default style
+- Anypoint Design - Enabled by adding `legacy` attribute to the elements.
 
 OSS application should not use Anypoint based styling as it's protected by MuleSoft copyrights. This property is reserved for OSS applications embedded in the Anypoint platform.
 
@@ -27,7 +27,7 @@ OSS application should not use Anypoint based styling as it's protected by MuleS
 
 ### Installation
 
-```
+```sh
 npm install --save @anypoint-web-components/anypoint-item
 ```
 
@@ -59,7 +59,7 @@ npm install --save @anypoint-web-components/anypoint-item
 </html>
 ```
 
-Use this element with `<anypoint-item-body>` to make styled `twoline` and `threeline` items.
+Use this element with `<anypoint-item-body>` to make styled `twoLine` and `threeLine` items.
 
 ```html
 <html>
@@ -90,7 +90,6 @@ To use `anypoint-item` as a link, wrap it in an anchor tag. Since `anypoint-item
 ```
 
 If you are concerned about performance and want to use `anypoint-item` in a `anypoint-listbox` with many items, you can just use a native `button` with the `anypoint-item` class applied (provided you have correctly included the shared styles):
-
 
 ```javascript
 import { LitElement, html, css } from 'lit-element';
