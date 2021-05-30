@@ -1,6 +1,5 @@
-import { aTimeout, fixture, expect, assert } from '@open-wc/testing';
-import * as MockInteractions from '@polymer/iron-test-helpers/mock-interactions.js';
-import * as sinon from 'sinon/pkg/sinon-esm.js';
+import { aTimeout, fixture, expect, assert, nextFrame, html } from '@open-wc/testing';
+import sinon from 'sinon';
 import '../anypoint-item.js';
 import '../anypoint-icon-item.js';
 
@@ -11,7 +10,7 @@ describe('<anypoint-item>', () => {
    * @returns {Promise<HTMLDivElement>}
    */
   async function itemFixture() {
-    return fixture(`<div role="listbox">
+    return fixture(html`<div role="listbox">
       <anypoint-item>item</anypoint-item>
     </div>`);
   }
@@ -20,7 +19,7 @@ describe('<anypoint-item>', () => {
    * @returns {Promise<HTMLDivElement>}
    */
   async function iconItemFixture() {
-    return fixture(`<div role="listbox">
+    return fixture(html`<div role="listbox">
       <anypoint-icon-item>item</anypoint-icon-item>
     </div>`);
   }
@@ -29,7 +28,7 @@ describe('<anypoint-item>', () => {
    * @returns {Promise<HTMLDivElement>}
    */
   async function itemWithInputFixture() {
-    return fixture(`<div role="list">
+    return fixture(html`<div role="list">
       <anypoint-item><input></anypoint-item>
     </div>`);
   }
@@ -38,7 +37,7 @@ describe('<anypoint-item>', () => {
    * @returns {Promise<HTMLDivElement>}
    */
   async function iconItemWithInputFixture() {
-    return fixture(`<div role="list">
+    return fixture(html`<div role="list">
       <anypoint-icon-item><input></anypoint-icon-item>
     </div>`);
   }
@@ -47,42 +46,42 @@ describe('<anypoint-item>', () => {
    * @returns {Promise<AnypointItem>}
    */
   async function itemRoleFixture() {
-    return fixture(`<anypoint-item role="button">item</anypoint-item>`);
+    return fixture(html`<anypoint-item role="button">item</anypoint-item>`);
   }
 
   /**
    * @returns {Promise<AnypointItem>}
    */
   async function itemTabindexFixture() {
-    return fixture(`<anypoint-item tabindex="-1">item</anypoint-item>`);
+    return fixture(html`<anypoint-item tabindex="-1">item</anypoint-item>`);
   }
 
   /**
    * @returns {Promise<AnypointItem>}
    */
   async function iconItemRoleFixture() {
-    return fixture(`<anypoint-icon-item role="button">item</anypoint-icon-item>`);
+    return fixture(html`<anypoint-icon-item role="button">item</anypoint-icon-item>`);
   }
 
   /**
    * @returns {Promise<AnypointItem>}
    */
   async function iconItemTabindexFixture() {
-    return fixture(`<anypoint-icon-item tabindex="-1">item</anypoint-icon-item>`);
+    return fixture(html`<anypoint-icon-item tabindex="-1">item</anypoint-icon-item>`);
   }
 
   /**
    * @returns {Promise<AnypointItem>}
    */
   async function itemBasicFixture() {
-    return fixture(`<anypoint-item>item</anypoint-item>`);
+    return fixture(html`<anypoint-item>item</anypoint-item>`);
   }
 
   /**
    * @returns {Promise<AnypointItem>}
    */
   async function iconItemBasicFixture() {
-    return fixture(`<anypoint-icon-item>item</anypoint-icon-item>`);
+    return fixture(html`<anypoint-icon-item>item</anypoint-icon-item>`);
   }
 
   describe('anypoint-item basic', () => {
@@ -96,14 +95,35 @@ describe('<anypoint-item>', () => {
     });
 
     it('space triggers a click event', async () => {
-      MockInteractions.pressSpace(item);
-      await aTimeout(80);
+      const info = {
+        composed: true,
+        bubbles: true,
+        cancelable: true,
+        code: 'Space',
+        key: ' ',
+        keyCode: 32,
+      };
+      item.dispatchEvent(new KeyboardEvent('keydown', { ...info }));
+      await nextFrame();
+      item.dispatchEvent(new KeyboardEvent('keyup', { ...info }));
+      await aTimeout(1);
       expect(clickHandler.callCount).to.be.equal(1);
     });
 
     it('enter triggers a click event', async () => {
-      MockInteractions.pressEnter(item);
-      await aTimeout(40);
+      const info = {
+        composed: true,
+        bubbles: true,
+        cancelable: true,
+        code: 'Enter',
+        key: 'Enter',
+        keyCode: 13,
+      };
+      item.dispatchEvent(new KeyboardEvent('keydown', { ...info }));
+      await nextFrame();
+      item.dispatchEvent(new KeyboardEvent('keyup', { ...info }));
+      await aTimeout(1);
+      
       expect(clickHandler.callCount).to.be.equal(1);
     });
   });
@@ -119,8 +139,18 @@ describe('<anypoint-item>', () => {
     });
 
     it('space triggers a click event', async () => {
-      MockInteractions.pressSpace(item);
-      await aTimeout(40);
+      const info = {
+        composed: true,
+        bubbles: true,
+        cancelable: true,
+        code: 'Space',
+        key: ' ',
+        keyCode: 32,
+      };
+      item.dispatchEvent(new KeyboardEvent('keydown', { ...info }));
+      await nextFrame();
+      item.dispatchEvent(new KeyboardEvent('keyup', { ...info }));
+      await aTimeout(1);
       expect(clickHandler.callCount).to.be.equal(1);
     });
 
@@ -139,8 +169,20 @@ describe('<anypoint-item>', () => {
       const itemClickHandler = sinon.spy();
       outerItem.addEventListener('click', itemClickHandler);
       innerInput.focus();
-      MockInteractions.pressSpace(innerInput);
-      await aTimeout(40);
+
+      const info = {
+        composed: true,
+        bubbles: true,
+        cancelable: true,
+        code: 'Space',
+        key: ' ',
+        keyCode: 32,
+      };
+      innerInput.dispatchEvent(new KeyboardEvent('keydown', { ...info }));
+      await nextFrame();
+      innerInput.dispatchEvent(new KeyboardEvent('keyup', { ...info }));
+      await aTimeout(1);
+
       expect(itemClickHandler.callCount).to.be.equal(0);
     });
 
@@ -150,8 +192,20 @@ describe('<anypoint-item>', () => {
       const innerInput = f.querySelector('input');
       const itemClickHandler = sinon.spy();
       outerItem.addEventListener('click', itemClickHandler);
-      MockInteractions.pressSpace(innerInput);
-      await aTimeout(40);
+      
+      const info = {
+        composed: true,
+        bubbles: true,
+        cancelable: true,
+        code: 'Space',
+        key: ' ',
+        keyCode: 32,
+      };
+      innerInput.dispatchEvent(new KeyboardEvent('keydown', { ...info }));
+      await nextFrame();
+      innerInput.dispatchEvent(new KeyboardEvent('keyup', { ...info }));
+      await aTimeout(1);
+      
       expect(itemClickHandler.callCount).to.be.equal(0);
     });
   });

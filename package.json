@@ -40,7 +40,6 @@
     "@open-wc/testing": "^2.5.33",
     "@polymer/iron-icon": "^3.0.1",
     "@polymer/iron-icons": "^3.0.1",
-    "@polymer/iron-test-helpers": "^3.0.1",
     "@polymer/paper-styles": "^3.0.1",
     "@web/dev-server": "^0.1.17",
     "@web/test-runner": "^0.13.5",
