@@ -1,4 +1,8 @@
-# anypoint-item, anypoint-item-body, anypoint-icon-item
+# Deprecated
+
+This component has been moved to `anypoint-web-components/awc`.
+
+====
 
 This component is based on Material Design text field and adjusted for Anypoint platform components.
 
